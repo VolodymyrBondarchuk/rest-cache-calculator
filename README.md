@@ -1,10 +1,11 @@
 # Rest based calculator (with cache)
 Simple calculator web service that caches the results of its computations, with endpoints are following:
 
-%hostname%:%port%/calculator/add/{a}/{b}/{c}
-%hostname%:%port%/calculator/substract/{a}/{b}/{c}
-%hostname%:%port%/calculator/multiply/{a}/{b}/{c}
-%hostname%:%port%/calculator/divide/{a}/{b}/{c}
+###%hostname%:%port%/calculator/add/{a}/{b}/{c}
+###%hostname%:%port%/calculator/substract/{a}/{b}/{c}
+###%hostname%:%port%/calculator/multiply/{a}/{b}/{c}
+###%hostname%:%port%/calculator/divide/{a}/{b}/{c}
+
 
 Project uses Jersey / JAX-RS to avoid parsing JSON manually. 
 Each endpoint supports the GET method, and it returns the result in JSON format. I
