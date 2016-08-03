@@ -5,7 +5,6 @@ Simple calculator web service that caches the results of its computations, with 
 ####%hostname%:%port%/calculator/substract/{a}/{b}/{c}
 ####%hostname%:%port%/calculator/multiply/{a}/{b}/{c}
 ####%hostname%:%port%/calculator/divide/{a}/{b}/{c}
-####<hostname>:<port>/calculator/divide/{a}/{b}/{c}
 
 
 Project uses Jersey / JAX-RS to avoid parsing JSON manually. 
