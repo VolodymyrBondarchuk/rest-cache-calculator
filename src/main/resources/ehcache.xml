@@ -1,0 +1,51 @@
+<ehcache xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="ehcache.xsd" updateCheck="true"
+	monitoring="autodetect" dynamicConfig="true">
+
+	<diskStore path="cache" />
+
+<cache name="addCache"
+       maxElementsInMemory="1"
+       eternal="true"
+       overflowToDisk="true"
+       diskPersistent="true"
+       maxElementsOnDisk="200"
+       memoryStoreEvictionPolicy="LRU"
+       transactionalMode="off"
+       >
+</cache>
+
+<cache name="divideCache"
+       maxElementsInMemory="1"
+       eternal="true"
+       overflowToDisk="true"
+       diskPersistent="true"
+       maxElementsOnDisk="200"
+       memoryStoreEvictionPolicy="LRU"
+       transactionalMode="off"
+       >
+</cache>
+
+<cache name="multiplyCache"
+       maxElementsInMemory="1"
+       eternal="true"
+       overflowToDisk="true"
+       diskPersistent="true"
+       maxElementsOnDisk="200"
+       memoryStoreEvictionPolicy="LRU"
+       transactionalMode="off"
+       >
+</cache>
+
+<cache name="substractCache"
+       maxElementsInMemory="1"
+       eternal="true"
+       overflowToDisk="true"
+       diskPersistent="true"
+       maxElementsOnDisk="200"
+       memoryStoreEvictionPolicy="LRU"
+       transactionalMode="off"
+       >
+</cache>
+
+</ehcache>
