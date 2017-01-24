@@ -10,7 +10,7 @@
 		<java-version>1.8</java-version>
 		<start-class>com.calculator.main.Application</start-class>
 	</properties>
-	
+
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
