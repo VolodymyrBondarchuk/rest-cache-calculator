@@ -1,4 +1,4 @@
-package com.calculator.rest;
+/*package com.calculator.rest;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
@@ -59,4 +59,4 @@ public class MultiplyController {
 
 	}
 
-}
+}*/

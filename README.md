@@ -1,24 +1,23 @@
-# Rest based calculator (with cache)
-Simple calculator web service that caches the results of its computations, with endpoints are following:
+Simple rest web based calculator caches the results of its computations
 
-####%hostname%:%port%/calculator/add/{a}/{b}/{c}
-####%hostname%:%port%/calculator/substract/{a}/{b}/{c}
-####%hostname%:%port%/calculator/multiply/{a}/{b}/{c}
-####%hostname%:%port%/calculator/divide/{a}/{b}/{c}
+Requirments
+1. JDK 1.7 or higher
+2. Maven 3.3.*
+
+How to run project
+1. Open command line on project directory
+2. Type "mvn spring-boot:run" (witour qoutes) and press enter
+3. Now web app should be available by the following urls:
 
 
-Project uses Jersey / JAX-RS to avoid parsing JSON manually. 
-Each endpoint supports the GET method, and it returns the result in JSON format. I
-If there is more than one call for the same operation on the same numbers, then the result will be returned from the cache rather than being recomputed.
-The calculator calls support the addition, subtraction, multiplication and division of up to three numbers in the same call.
-Project uses 'ehcache' implementation in Spring framework.
+%hostname%:%port%/calculator/add/{a}/{b}/{c}
+%hostname%:%port%/calculator/substract/{a}/{b}/{c}
+%hostname%:%port%/calculator/multiply/{a}/{b}/{c}
+%hostname%:%port%/calculator/divide/{a}/{b}/{c}
 
-#Technologies used:
-- Spring 3.2.3.RELEASE (core, web, context, aop)
-- Jersey 1.7.11
-- Ehcache 2.8.1
+
+Technologies used:
+- Spring Boot 1.3.5.RELEASE
+- Ehcache 2.10.2
 - logback 1.0.13
 - Maven
-
-To do:
-- find out and fix writing cache data into disk space

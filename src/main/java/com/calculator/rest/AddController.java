@@ -1,58 +1,48 @@
 package com.calculator.rest;
 
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.PathParam;
-import javax.ws.rs.Produces;
-import javax.ws.rs.core.MediaType;
-import javax.ws.rs.core.Response;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.cache.annotation.Cacheable;
-import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
 
 
-@Controller
-@Path("/add")
+@RestController
 public class AddController {
 	
 	private static final Logger log = LoggerFactory.getLogger(AddController.class);
 
-	@GET
-	public Response add() {
+	@RequestMapping(value="/add", method = RequestMethod.GET)
+	public String add() {
 
-		return Response.status(400).entity("Please add parametrs to the request").build();
+		log.debug("No parametrs in the request");
+		return "Please add parametrs to the request";
 
 	}
 	
-	@GET
-	@Path("{a}")
-	@Produces(MediaType.APPLICATION_JSON)
-	@Cacheable(value="addCache")
-	public Double add(@PathParam("a") Double a) {
+	@RequestMapping(value="/add/{a}", method = RequestMethod.GET)
+	@Cacheable(value="addCache", key="#a")
+	public Double add(@PathVariable Double a) {
 
 		log.debug("Parametrs: "+a);
 		return a;
 
 	}
 	
-	@GET
-	@Path("{a}/{b}")
-	@Produces(MediaType.APPLICATION_JSON)
-	@Cacheable(value="addCache")
-	public Double add(@PathParam("a") Double a, @PathParam("b") Double b) {
+	@RequestMapping(value="/add/{a}/{b}", method = RequestMethod.GET)
+	@Cacheable(value="addCache", key="#a.toString().concat('+').concat(#b.toString())")
+	public Double add(@PathVariable Double a, @PathVariable Double b) {
 		log.debug("Parametrs: "+a+", "+b);
 		Double result = a + b;
 		return result;
 
 	}
 	
-	@GET
-	@Path("{a}/{b}/{c}")
-	@Produces(MediaType.APPLICATION_JSON)
-	@Cacheable(value="addCache")
-	public Double add(@PathParam("a") Double a, @PathParam("b") Double b, @PathParam("c") Double c) {
+	@RequestMapping(value="/add/{a}/{b}/{c}", method = RequestMethod.GET)
+	@Cacheable(value="addCache", key="#a.toString().concat('+').concat(#b.toString()).concat('+').concat(#c.toString())")
+	public Double add(@PathVariable Double a, @PathVariable Double b, @PathVariable Double c) {
 		log.debug("Parametrs: "+a+", "+b+", "+c);
 		Double result = a + b + c;
 		return result;

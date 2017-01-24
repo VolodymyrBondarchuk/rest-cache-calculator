@@ -9,7 +9,7 @@
 		</layout>
 	</appender>
 
-	<logger name="com.calculator" level="debug"
+	<logger name="com.calculator" level="info"
 		additivity="false">
 		<appender-ref ref="STDOUT" />
 	</logger>
@@ -19,7 +19,7 @@
 		<appender-ref ref="STDOUT" />
 	</logger>
 	
-	<root level="ALL">
+	<root level="info">
 		<appender-ref ref="STDOUT" />
 	</root>
 

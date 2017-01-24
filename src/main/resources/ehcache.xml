@@ -2,50 +2,48 @@
 	xsi:noNamespaceSchemaLocation="ehcache.xsd" updateCheck="true"
 	monitoring="autodetect" dynamicConfig="true">
 
-	<diskStore path="cache" />
+	<!-- <diskStore path="java.io.tmpdir" /> -->
+	<diskStore path="c:\\cache" />
 
-<cache name="addCache"
-       maxElementsInMemory="1"
-       eternal="true"
-       overflowToDisk="true"
-       diskPersistent="true"
-       maxElementsOnDisk="200"
-       memoryStoreEvictionPolicy="LRU"
-       transactionalMode="off"
-       >
-</cache>
-
-<cache name="divideCache"
-       maxElementsInMemory="1"
-       eternal="true"
-       overflowToDisk="true"
-       diskPersistent="true"
-       maxElementsOnDisk="200"
-       memoryStoreEvictionPolicy="LRU"
-       transactionalMode="off"
-       >
-</cache>
-
-<cache name="multiplyCache"
-       maxElementsInMemory="1"
-       eternal="true"
-       overflowToDisk="true"
-       diskPersistent="true"
-       maxElementsOnDisk="200"
-       memoryStoreEvictionPolicy="LRU"
-       transactionalMode="off"
-       >
-</cache>
-
-<cache name="substractCache"
-       maxElementsInMemory="1"
-       eternal="true"
-       overflowToDisk="true"
-       diskPersistent="true"
-       maxElementsOnDisk="200"
-       memoryStoreEvictionPolicy="LRU"
-       transactionalMode="off"
-       >
-</cache>
+	<cache name="addCache" 
+		maxEntriesLocalHeap="10000"
+		maxEntriesLocalDisk="1000" 
+		eternal="false" 
+		diskSpoolBufferSizeMB="20"
+		timeToIdleSeconds="300" timeToLiveSeconds="600"
+		memoryStoreEvictionPolicy="LFU" 
+		transactionalMode="off">
+		<persistence strategy="localTempSwap" />
+	</cache>
+	<cache name="substractCache" 
+		maxEntriesLocalHeap="10000"
+		maxEntriesLocalDisk="1000" 
+		eternal="false" 
+		diskSpoolBufferSizeMB="20"
+		timeToIdleSeconds="300" timeToLiveSeconds="600"
+		memoryStoreEvictionPolicy="LFU" 
+		transactionalMode="off">
+		<persistence strategy="localTempSwap" />
+	</cache>
+	<cache name="divideCache" 
+		maxEntriesLocalHeap="10000"
+		maxEntriesLocalDisk="1000" 
+		eternal="false" 
+		diskSpoolBufferSizeMB="20"
+		timeToIdleSeconds="300" timeToLiveSeconds="600"
+		memoryStoreEvictionPolicy="LFU" 
+		transactionalMode="off">
+		<persistence strategy="localTempSwap" />
+	</cache>
+	<cache name="multiplyCache" 
+		maxEntriesLocalHeap="10000"
+		maxEntriesLocalDisk="1000" 
+		eternal="false" 
+		diskSpoolBufferSizeMB="20"
+		timeToIdleSeconds="300" timeToLiveSeconds="600"
+		memoryStoreEvictionPolicy="LFU" 
+		transactionalMode="off">
+		<persistence strategy="localTempSwap" />
+	</cache>
 
 </ehcache>
